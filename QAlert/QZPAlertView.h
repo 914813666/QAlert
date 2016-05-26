@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, QZPAlertViewType) {
 @property (nonatomic, assign) QZPAlertViewType  type;
 ///按钮点击回调
 @property (nonatomic, strong) void (^QZPAlertViewButtonClick) (NSInteger index);
+@property (nonatomic, strong) void (^QZPAlertViewButtonClickTypeInput)(NSInteger index, NSString * str);
 
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSString * message;

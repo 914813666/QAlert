@@ -100,11 +100,23 @@
 }
 
 - (void) buttonClick: (UIButton *) btn {
-    if (btn ==_leftBtn && self.QZPAlertViewButtonClick) {
-        self.QZPAlertViewButtonClick(0);
+    if (btn ==_leftBtn) {
+        if (self.QZPAlertViewButtonClick) {
+             self.QZPAlertViewButtonClick(0);
+        }
+        else if (self.QZPAlertViewButtonClickTypeInput) {
+            self.QZPAlertViewButtonClickTypeInput(0, self.inputTextField.text);
+        }
+       
     }
-    else if (btn ==_rightBtn && self.QZPAlertViewButtonClick) {
-        self.QZPAlertViewButtonClick(1);
+    else if (btn ==_rightBtn) {
+        if (self.QZPAlertViewButtonClick) {
+             self.QZPAlertViewButtonClick(1);
+        }
+        else if (self.QZPAlertViewButtonClickTypeInput) {
+            self.QZPAlertViewButtonClickTypeInput(1, self.inputTextField.text);
+        }
+       
     }
     
     [self hide];
